@@ -4,10 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>welcome to mindcare connection</h1>
-    <a href="{{url_for('login')}}">login</a><br>
-    <a href="{{url_for('register')}}">brcome a member: register</a>
+    <nav class="header-line">
+        <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="peace-mind logo">
+        <ul class="list">
+            <li class="active"><a href="">home</a></li>
+            <li><a href="">about</a></li>
+            <li><a href="">service</a></li>
+            <li><a href="{{url_for('login')}}">login</a></li>
+            <li class="ctn"><a href="{{url_for('register')}}">register</a></li>
+        </ul>
+    </nav>
+
+    <header>   
+        <div class="head-content">
+            <h1>Peace-mind connect</h1>
+            <p>your mental health maters to us</p>
+            <h2>Available 24/7</h2>
+            <p>We are passionate about you.</p>
+            <nav>
+                <ul>
+                    <li class="ctn"><a href="">about us</a></li>
+                    <li class="ctn"><a href="">our service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="first-section">
+        <div class="logo2">
+            <img src="{{ url_for('static', filename='logo.png') }}">
+        </div>
+        <div class="mission">
+           <h3>MISSION</h3> 
+            <div class="line"></div>
+        </div>
+        <div class="mission-content">
+            <p>At peace-mind connect, we are committed to 
+                delivering empathetic, patient-focused, and 
+                scientifically-backed psychiatric care. Our goal is 
+                to support individuals on their path to mental wellness, 
+                instilling hope and empowering them to live meaningful 
+                lives. We strive for excellence, respect, and advocacy, 
+                aiming to break the stigma around mental health and foster a 
+                society where everyone has the chance to flourish.</p>
+            <a href="#" class="ctn">learn More</a>
+        </div>
+    </section>
+    <section class="service">
+        <div class="service-writeup">
+           <h3>We provide the best solution to you</h3>
+           <div class="line"></div>
+        </div>
+        <div class="service-row">
+            <div class="service-row1">
+                <img src="{{ url_for('static',filename='therapy_img.jpeg') }}">
+                <h2>Therapy</h2>
+                <p>Psychological evidence-based services to support you... 
+                    Online therapy and personalized concierge services</p>
+                <a href="#" class="ctn">learn More</a>
+            </div>
+            <div class="service-row2">
+                <img src="{{ url_for('static',filename='consultancy_img.jpeg') }}">
+                <h2>Consultancy</h2>
+                <p>our consultancy services are designed to offer expert 
+                    guidance and tailored solutions for mental health and wellness</p> 
+                <a href="#" class="ctn">learn More</a>
+            </div>
+            <div class="service-row3">
+                <img src="{{ url_for('static',filename='article_img.jpeg') }}">
+                <h2>Articles</h2>
+                <p>we believe in the power of knowledge to promote mental well-being.</p>
+                <a href="#" class="ctn">learn More</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="follow-us">
+            <h2>Follow Us</h2>
+            <div class="line"></div>
+        </div>
+        <div class="social-icon">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="copy">
+            <p>&copy; 2024 peace-mind connection. all right reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

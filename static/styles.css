@@ -1,0 +1,308 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
+}
+
+ul{
+    list-style: none;/*remove the dot in the list*/
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+
+
+header {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('backgrd_img.jpeg');
+    background-position: top;/*Centers the background image */
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-attachment: fixed;/* Keeps the background image fixed during scrolling */
+    
+}
+
+
+.header-line {
+    display: flex;   
+    justify-content: space-between;
+    position: absolute;/*allign with the header image*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.list{
+    display: flex;/*display content horizontally*/
+    align-items: center; 
+    color: whitesmoke;
+}
+
+.list li{
+    margin: 0 25px;/*top n bottom 0, left nd right 15px*/
+}
+
+.list li a{
+    color: indigo;
+}
+
+.ctn{
+    background-color: red;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 5px 8px;
+    border-radius: 40px;
+    color: white; 
+}
+
+.active{
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.head-content{
+    text-align: center;
+    margin-bottom: 150px;
+    font-size: 5vmin;  
+}
+
+.head-content h1{
+    color: purple;
+}
+
+.head-content p{
+    color: rgb(58, 6, 49);
+}
+
+.head-content h2{
+    color: rgb(25, 10, 158);
+}
+
+.head-content nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.line{
+    width: 150px;
+    height: 4px;
+    background: blueviolet;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.menu_botn{
+   position: absolute;
+   top: 30px; 
+   right: 30px;
+   width: 30px;/*size*/
+   cursor: pointer;
+}
+
+.first-section{
+    background-color: antiquewhite;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+}
+
+.logo2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 100px;
+    
+}
+.logo2 img{
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.mission{
+    text-align: center;
+    padding-top: 30px;
+}
+.mission h3{
+    font-weight: bold;
+    font-size: 4vmin;
+}
+.mission-content{
+    text-align: center;
+    padding: 30px 30px;
+    font-size: 3vmin;
+}
+.mission-content p{
+    padding-bottom: 40px;
+}
+
+.service{
+    color: chocolate;
+}
+.service-writeup{
+    text-align: center;
+    font-weight: 800;
+    font-size: 4vmin;
+    padding-top: 45px;
+    padding-bottom: 30px;
+    
+}
+
+.service-row{
+    display: flex;
+    margin: 0 30px;
+    color: black;    
+}
+.service-row1{
+    flex: 1;
+    margin: 0 20px;
+}
+.service-row2{
+    flex: 1;
+    margin: 0 20px;
+}
+.service-row3{
+    flex: 1;
+    margin: 0 20px;
+}
+.service-row1 img{
+    display: block;
+    width: 100%;
+    height: 50%;
+    padding: ;
+}
+.service-row2 img{
+    display: block;
+    width: 100%;
+    height: 50%;
+}
+.service-row3 img{
+    display: block;
+    width: 100%;
+    height: 50%;
+}
+.service-row1 h2{
+    margin: 27px 0;
+    margin-left: 10px;
+}
+.service-row2 h2{
+    margin: 27px 0;
+    margin-left: 10px;
+}
+.service-row3 h2{
+    margin: 27px 0;
+    margin-left: 10px;
+}
+.service-row1 p{
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 2.3vmin;
+}
+.service-row2 p{
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 2.3vmin;
+}
+.service-row3 p{
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 2.3vmin;
+}
+
+
+footer{
+    background: rgb(226, 143, 143);
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+}
+
+.social-icon{
+    padding-bottom: 15px;
+}
+.social-icon a{
+    padding: 0 5px;
+}
+.copy{
+    background-color: gray;
+    width: 100%;
+    height: 45px;
+    padding: 5px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*mobile view*/
+@media only screen and (max-width:850px){
+    .header-line {
+        padding: 0;
+    }
+    .logo{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+    .list{
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        background: rgb(28, 28, 46);
+        margin-top: -900px;
+        transition: margin-top 0.3s; /* Smooth transition */
+    }
+    .mobile-menu{
+        margin-top: 0;
+    }
+    
+    .list li{
+        margin: 30px auto;
+    }
+    .service-row{
+        flex-direction: column;        
+    }
+    .service-row1{
+        margin: 20px 0;
+    }
+    .service-row2{
+        margin: 20px 0;
+    }
+    .service-row3{
+        margin: 20px 0;
+    }
+}

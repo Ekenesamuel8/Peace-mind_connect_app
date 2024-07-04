@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: indigo;
+}
+
+.header-line {
+    display: flex;   
+    justify-content: space-between;
+    position: absolute;/*allign with the header image*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.list{
+    display: flex;/*display content horizontally*/
+    align-items: center; 
+    color: whitesmoke;
+}
+
+.list li{
+    margin: 0 25px;/*top n bottom 0, left nd right 15px*/
+}
+
+
+.ctn{
+    background-color: red;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 5px 8px;
+    border-radius: 40px;
+    color: white; 
+}
+
+.active{
+    color: red;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+
+.header {
+    background-image: url('login_background.jpeg');
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 200px 100px;
+}
+
+.header div h1 {
+    padding-bottom: 15px;
+}
+
+section .login-form {
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-form fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.login-form legend {
+    font-weight: bold;
+    padding: 0 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group .form-control {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #2c0c66;/*line-boarder, */
+    border-radius: 15px;/*coverness*/
+}
+
+.form-group .btn {
+    background-color: #ff6347;
+    color: white;/*text-color*/
+    border: none;
+    cursor: pointer;/*mouse cousor*/
+    transition: background-color 0.3s;
+    width: 100px;/*size*/
+}
+
+.form-group .btn:hover {
+    background-color: #ff4500;
+}
+
+.line{
+    width: 150px;
+    height: 4px;
+    background: blueviolet;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+footer{
+    background: rgb(226, 143, 143);
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+}
+
+.social-icon{
+    padding-bottom: 15px;
+}
+.social-icon a{
+    padding: 0 5px;
+}
+.copy{
+    background-color: gray;
+    width: 100%;
+    height: 45px;
+    padding: 5px 0;
+}
