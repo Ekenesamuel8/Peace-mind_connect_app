@@ -1,27 +1,34 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template, url_for, redirect, flash, request, session, g
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import input_required, length, ValidationError
+from wtforms.validators import input_required, length, ValidationError # data_required
 from flask_bcrypt import Bcrypt
+import uuid
+
+
 
 
 """make app instance
 db: database instance
 app.config:connect the app to the database"""
-
+# Initialize Flask app
 app = Flask(__name__)
-bcrypt = Bcrypt(app)# to ensure the paasword that is stored in or database is encrypt with hash 
+bcrypt = Bcrypt(app)# to ensure the paasword that is stored in or database is hashed 
+# Configure the SQLite database URL and secret key
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:1258@localhost/ekenetest'
 app.config['SECRET_KEY'] = 'ascretekey'
+# Initialize SQLAlchemy for database operations
 db = SQLAlchemy(app)
 
+# Initialize Flask-Login for user session management
 
-login_manager = LoginManager()
+login_manager = LoginManager(app)
 login_manager.init_app(app)
-login_manager.login_view = "login"
+login_manager.login_view = "login" # Set the login view when user is not authenticated
 
+# User loader callback for Flask-Login
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -41,6 +48,22 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(22), nullable=False, unique=True)
     password = db.Column(db.String(80), nullable=False)
 
+class Session(db.Model, UserMixin):
+    """table for the database
+        id: identity column for the user
+        username: the username (db.string: not more than 22 character)
+            (nullable:means the username feild must not b empty)
+            (unique: means they cannot be duplicate username)
+        pasword: same as username
+    """
+    
+    id = db.Column(db.Integer, primary_key=True)
+    user = db.Column(db.Integer, nullable=False)
+    session = db.Column(db.String(50), nullable=False, default=uuid.uuid4)
+    created = db.Column(db.DateTime, nullable=True)
+    expiry = db.Column(db.DateTime, nullable=True)
+
+
 class Membershipform(FlaskForm):
     """registration form
         username: 
@@ -54,14 +77,13 @@ class Membershipform(FlaskForm):
     
     submit = SubmitField("Register")
 
-    def comfirm_username(self, username):
+    def validate_username(self, username):
         """to check if user name alredy exist when registering
         """
-        already_exist = User.query.filter_by(username=username.data).first()
+        user = User.query.filter_by(username=username.data).first()
 
-        if already_exist:
-            raise ValidationError(
-            "this username exist already")
+        if user:
+            raise ValidationError("this username exist already")
         
 
 
@@ -86,9 +108,27 @@ it display the content of the function(home)"""
 def home():
     return render_template('home.html')
 
+@app.route('/consultancy')
+def consultancy():
+    return render_template('consultancy.html')
+
+@app.route('/about')
+@login_required
+def about(): 
+    return render_template('about.html')
+
+@app.route('/service')
+def service():
+    return render_template('service.html')
+
+
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
+    #if request.method == 'POST':
+     #   session.pop('user', None)
+
+      #  if request.form['password'] == 
     return render_template('dashboard.html')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -96,10 +136,15 @@ def login():
     form = loginform()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
-        if user:
-            if bcrypt.check_password_hash(user.password, form.password.data):
-                login_user(user)
-                return redirect(url_for('dashboard'))
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            sess = Session()
+            sess.user = user.id
+            db.session.add(sess)
+            db.session.commit()
+            login_user(user)
+            return redirect(url_for('dashboard'))
+        else:
+            flash('login unsuccessfull, pls check email or password')    
     return render_template('login.html', form=form)
 
 @app.route('/logout', methods=['GET', 'POST'])
@@ -113,15 +158,17 @@ def register():
     form = Membershipform()
 
     if form.validate_on_submit():
+        flash('accout creare')
         """hashed_psw: this generate a hash for the real password
         db.session.add(new_user): adds the new_user info in the database table
         db.session.commit: this ensure is been added to the table
         redirect: redirect you to the login page after you register
         """
-        hashed_psw = bcrypt.generate_password_hash(form.password.data)
+        hashed_psw = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         new_user = User(username=form.username.data, password=hashed_psw)
         db.session.add(new_user)
         db.session.commit()
+        flash("you have been registered")
         return redirect(url_for('login'))
 
     return render_template('register.html', form=form)

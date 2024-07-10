@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='loginstyles.css') }}">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    <link rel="stylesheet" href="{{ url_for('static', filename='loginstyles.css') }}" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <nav class="header-line">
-        <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="peace-mind logo">
+        <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="peace-mind logo">
         <ul class="list">
             <li><a href="{{url_for('home')}}">home</a></li>
-            <li><a href="">about</a></li>
+            <li><a href="{{ url_for('about') }}">about</a></li>
             <li><a href="">service</a></li>
             <li class="active"><a href="{{url_for('login')}}">login</a></li>
             <li class="ctn"><a href="{{url_for('register')}}">register</a></li>
         </ul>
     </nav>
     <section class="header">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
         <div>
             <h1>Member Login</h1>
         </div>

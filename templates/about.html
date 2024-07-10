@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='aboutstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="header-line">
+        <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="peace-mind logo">
+        <ul class="list">
+            <li><a href="{{url_for('home')}}">home</a></li>
+            <li class="active"><a href="">about</a></li>
+            <li><a href="">service</a></li>
+            <li><a href="{{url_for('login')}}">login</a></li>
+            <li class="ctn"><a href="{{url_for('register')}}">register</a></li>
+        </ul>
+    </nav>
+    <section class="about-us">
+        <div class="about">
+            <h1>About Us</h1>
+        </div>
+    </section>
+    <section class="about-statement">
+        <div class="who-we">
+            <h1>Who We Are</h1>
+            <div class="line"></div>
+        </div>
+        <div class="statement">
+            <h2>Welcome to Peace Mind Connect</h2>
+            <p>
+                Born out of a deep passion for mental well-being, Peace Mind Connect came to life in June 2024.
+                 We specialize in providing mental health and psychological services delivered by experienced,
+                  qualified, and verified professionals, including psychologists, therapists, and counselors.
+                   Our mission is to nurture the human mind, spirit, and body, helping individuals become
+                    the best version of themselves. Headquartered in Lagos, Nigeria, Peace Mind Connect is 
+                    founded on four core principles: educate, connect, discuss, and research.
+                    We offer resources for everyone, from children and teens to adults, couples, and even
+                     organizations. Peace-Mind Connect allows you to access support from anywhere, anytime through our web app.
+            </p>
+        
+            <div>
+                <p>
+                    We collaborate with a growing network of verified mental health professionals who offer
+                     services across various platforms. These experts also contribute valuable insights and ideas 
+                     on mental health and psychological well-being through their specialized writing. Our content 
+                     is designed to be easily understandable without being overly vague or too clinical.
+                     To ensure efficient service delivery, we connect you with a verified mental health professional 
+                     based on your unique conversation history with us. We also offer free resources to help you on 
+                     your journey. Check them out [here].
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2>Our Mission and Vission</h2>
+            <div class="line"></div>
+        </div>
+        <div>
+            <div>
+                <img src="{{ url_for('static', filename='imglogo.png') }}" alt="">
+                <h2>Vission</h2>    
+                <p>
+                    First choice hub for convenient mental health advocacy, therapy and consultation services in Africa.
+                </p>                
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='imglogo.png') }}" alt="">
+                <h2>Mission</h2>    
+                <p>
+                    we are committed to 
+            delivering empathetic, patient-focused, and 
+            scientifically-backed psychiatric care. Our goal is 
+            to support individuals on their path to mental wellness, 
+            instilling hope and empowering them to live meaningful 
+            lives. We strive for excellence, respect, and advocacy, 
+            aiming to break the stigma around mental health and foster a 
+            society where everyone has the chance to flourish
+                </p> 
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="follow-us">
+            <h2>Follow Us</h2>
+            <div class="line"></div>
+        </div>
+        <div class="social-icon">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="copy">
+            <p>&copy; 2024 peace-mind connection. all right reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

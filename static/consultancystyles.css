@@ -1,0 +1,241 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+
+}
+
+ul {
+    list-style: none; /* Remove the dot in the list */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+
+.main {
+    margin-top: 100px; /* Ensure it doesn't overlap with fixed header */
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Header styles */
+.header-line {
+    display: flex;
+    justify-content: space-between;
+    position: absolute; /* Align with the header image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.list {
+    display: flex; /* Display content horizontally */
+    align-items: center;
+    color: whitesmoke;
+}
+
+.list li {
+    margin: 0 25px; /* Top and bottom 0, left and right 15px */
+}
+
+.list li a {
+    color: indigo;
+}
+
+.ctn {
+    background-color: red;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 5px 8px;
+    border-radius: 40px;
+    color: white;
+}
+
+/* Consultancy section styles */
+.consultancy {
+    width: 100%;
+    height: 60vh;
+    margin-top: 150px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.consultancy h1 {
+    padding-bottom: 15px;
+    color: blue;
+}
+
+.consultancy p {
+    padding: 20px 30px;
+    line-height: 2;
+    font-size: 20px;
+    color: rgb(3, 43, 56);
+}
+
+.see {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.see p {
+    padding: 20px;
+    font-size: larger;
+    color: blue;
+}
+
+/* Service section styles*/ 
+.service{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.service-row1,
+.service-row2 {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.service-img {
+    width: 600px; /* Adjust the width to make the image smaller */
+    height: 400px; /* Adjust the height to make the image smaller */
+    margin-right: 50px;
+    overflow: hidden; /* Ensure the image is contained within the div */
+} 
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fits within the div */
+    border-radius: 37%; /* Make the image round */
+}
+.service-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.service-content h2 {
+    margin-bottom: 10px;
+    color: blue;
+}
+
+.service-content p {
+    margin-bottom: 10px;
+}
+
+/* Footer styles */
+footer {
+    background: rgb(226, 143, 143);
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+}
+
+.social-icon {
+    padding-bottom: 15px;
+}
+
+.social-icon a {
+    padding: 0 5px;
+}
+
+.copy {
+    background-color: gray;
+    width: 100%;
+    height: 45px;
+    padding: 5px 0;
+}
+
+.quick-links,
+.more {
+    display: inline-block;
+    text-align: left;
+    margin: 0 20px;
+}
+.foot-link{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.line{
+    width: 150px;
+    height: 4px;
+    background: blueviolet;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .service {
+        flex-direction: column;
+    }
+
+    .service-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .service-img {
+        width: 250px;
+        height: 200px;
+        margin-right: 0;
+       /* margin-left: 30px;*/
+        margin-bottom: 20px;
+    }
+
+    .service-content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .consultancy {
+        font-size: 1.5vmax;
+    }
+
+    .consultancy h1 {
+        font-size: 2rem;
+    }
+
+    .consultancy p {
+        font-size: 1rem;
+    }
+
+    .see p {
+        font-size: 1rem;
+    }
+}

@@ -6,7 +6,18 @@
     <title>membership feild</title>
 </head>
 <body>
-    <h1>want to a member?</h1>
+    <h1>want to be a member?</h1>
+
+    <!-- Flash messages display section -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
 
     <form method="POST" action="">
         {{ form.hidden_tag() }}
@@ -15,6 +26,7 @@
         {{ form.submit }}
     </form>
 
-    <a href="{{url_for('login')}}">alredy a member? login</a>
+    <a href="{{url_for('login')}}">already a member? login</a>
+    <a href="{{url_for('dashboard')}}">dashboard</a>
 </body>
 </html>
