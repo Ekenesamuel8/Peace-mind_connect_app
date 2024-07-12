@@ -10,6 +10,133 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>welome to our therapy session</h1>
+    <nav class="header-line">
+        <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="peace-mind logo">
+        <!-- Hamburger icon for mobile view -->
+        <div class="menu_botn" id="menu_botn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <!-- Navigation links -->
+        <ul class="list">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('service') }}">Service</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+            <li class="ctn"><a href="{{url_for('register')}}">Register</a></li>
+        </ul>
+    </nav>
+    <section class="about-us">
+        <div class="about">
+            <h1>Therapy</h1>
+        </div>
+    </section>
+    <section class="main">
+        <div class="consultancy">
+            <p>
+                Our therapy, counseling, and coaching services
+                 utilize evidence-based psychological methods. 
+                 We offer a range of options available both online 
+                 and offline, including the choice of anonymous support.
+            </p>
+            <p>
+                Our experienced and certified therapists, psychologists, 
+                psychiatrists, and counselors are carefully matched to work 
+                with you according to your unique profile and goals. 
+                Currently, in-person sessions are available exclusively 
+                in Lagos, Nigeria, while our online services can be accessed 
+                from anywhere.
+            </p>
+            <p>
+                If there is a service you do not find here, kindly send us a 
+                message to ascertain if we offer such services under a different 
+                name. 
+            </p>
+        </div>
+        <div class="see">
+            <p>See all consultation services below</p>
+        </div>
+    </section>
+    <section>
+        <div class="service-row">
+            <div class="service-row1">
+                <img src="{{ url_for('static',filename='img/therapy_img.jpeg') }}">
+                <h2>Therapy</h2>
+                <p>Psychological evidence-based services to support you... 
+                    Online therapy and personalized concierge services</p>
+                <a href="{{ url_for('therapy') }}" class="ctn">learn More</a>
+            </div>
+            <div class="service-row2">
+                <img src="{{ url_for('static',filename='img/consultancy_img.jpeg') }}">
+                <h2>Consultancy</h2>
+                <p>our consultancy services are designed to offer expert 
+                    guidance and tailored solutions for mental health and wellness</p> 
+                <a href="{{ url_for('consultancy') }}" class="ctn">learn More</a>
+            </div>
+            <div class="service-row3">
+                <img src="{{ url_for('static',filename='img/article_img.jpeg') }}">
+                <h2>Articles</h2>
+                <p>we believe in the power of knowledge to promote mental well-being.</p>
+                <a href="#" class="ctn">learn More</a>
+            </div>
+        </div>
+        <div class="service-row">
+            <div class="service-row1">
+                <img src="{{ url_for('static',filename='img/therapy_img.jpeg') }}">
+                <h2>Therapy</h2>
+                <p>Psychological evidence-based services to support you... 
+                    Online therapy and personalized concierge services</p>
+                <a href="{{ url_for('therapy') }}" class="ctn">learn More</a>
+            </div>
+            <div class="service-row2">
+                <img src="{{ url_for('static',filename='img/consultancy_img.jpeg') }}">
+                <h2>Consultancy</h2>
+                <p>our consultancy services are designed to offer expert 
+                    guidance and tailored solutions for mental health and wellness</p> 
+                <a href="{{ url_for('consultancy') }}" class="ctn">learn More</a>
+            </div>
+            <div class="service-row3">
+                <img src="{{ url_for('static',filename='img/article_img.jpeg') }}">
+                <h2>Articles</h2>
+                <p>we believe in the power of knowledge to promote mental well-being.</p>
+                <a href="#" class="ctn">learn More</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="follow-us">
+            <h2>Follow Us</h2>
+            <div class="line"></div>
+        </div>
+        <div class="social-icon">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="foot-link">
+            <div>
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('service') }}">Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>More</h2>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('service') }}">Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <p>&copy; 2024 peace-mind connection. all right reserved.</p>
+        </div>
+    </footer>
+     <!--JavaScript for toggling mobile menu -->
+     <script src="{{ url_for('static', filename='javascript/index.js') }}"></script>     
 </body>
 </html>

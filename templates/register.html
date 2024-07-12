@@ -4,29 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>membership feild</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='registrationstyles.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>want to be a member?</h1>
-
-    <!-- Flash messages display section -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <ul>
-            {% for category, message in messages %}
-                <li class="{{ category }}">{{ message }}</li>
-            {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
-
-    <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        {{ form.username }}
-        {{ form.password }}
-        {{ form.submit }}
-    </form>
-
-    <a href="{{url_for('login')}}">already a member? login</a>
-    <a href="{{url_for('dashboard')}}">dashboard</a>
+    <nav class="header-line">
+        <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="peace-mind logo">
+        <!-- Hamburger icon for mobile view -->
+        <div class="menu_botn" id="menu_botn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Navigation links -->
+        <ul class="list">
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{url_for('service')}}">Service</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+            <li class="ctn"><a href="{{url_for('register')}}">Register</a></li>
+        </ul>
+    </nav>
+    <section class="header">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div>
+            <h1>Membership Registration</h1>
+        </div>
+        <div class="login-form">
+            <form method="POST" action="">
+                <fieldset>
+                    <legend>Login</legend>
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.username.label }}
+                        {{ form.username(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.label }}
+                        {{ form.password(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit(class="form-control btn") }}
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="msg">
+            <a href="{{url_for('login')}}">already a member? login</a>
+        </div>
+    </section>
+    <footer>
+        <div class="follow-us">
+            <h2>Follow Us</h2>
+            <div class="line"></div>
+        </div>
+        <div class="social-icon">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="foot-link">
+            <div>
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('service') }}">Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>More</h2>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <p>&copy; 2024 peace-mind connection. all right reserved.</p>
+        </div>
+    </footer>
+     <!--JavaScript for toggling mobile menu -->
+    <script src="{{ url_for('static', filename='javascript/index.js') }}"></script>     
 </body>
 </html>

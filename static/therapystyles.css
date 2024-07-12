@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+ul {
+    list-style: none; /* Remove the dot in the list */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+
+
+/* Header styles */
+.header-line {
+    display: flex;
+    justify-content: space-between;
+    position: absolute; /* Align with the header image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.list {
+    display: flex; /* Display content horizontally */
+    align-items: center;
+    color: whitesmoke;
+}
+
+.list li {
+    margin: 0 25px; /* Top and bottom 0, left and right 15px */
+}
+
+.list li a {
+    color: white;
+}
+
+.ctn {
+    background-color: red;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 5px 8px;
+    border-radius: 40px;
+    color: white;
+}
+
+
+.about {
+    background-image: url('img/therapy_img.jpeg');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 50vh;
+    align-items: end;/* Centers vertically */
+    justify-content: start;/* Centers horizontally */
+    display: flex;
+}
+.about h1{
+    text-align: center;
+    font-size: 5vmin;
+    padding: 50px;
+    color: white;
+}
+
+/* write up section styles */
+.main {
+    margin-top: 20px; /* Ensure it doesn't overlap with fixed header */
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.consultancy {
+    width: 100%;
+    height: 90vh;
+    margin-top: 100px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.consultancy p {
+    padding: 20px 30px;
+    line-height: 2;
+    font-size: 20px;
+    color: rgb(3, 43, 56);
+}
+
+.see {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.see p {
+    padding: 10px;
+    font-size: larger;
+    color: blue;
+}
+
+.service-writeup{
+    text-align: center;
+    font-weight: 800;
+    font-size: 4vmin;
+    padding-top: 45px;
+    padding-bottom: 30px;
+    
+}
+
+.service-row{
+    display: flex;
+    margin: 0 30px;
+    color: black;    
+}
+.service-row1{
+    flex: 1;
+    margin: 0 20px;
+}
+.service-row2{
+    flex: 1;
+    margin: 0 20px;
+}
+.service-row3{
+    flex: 1;
+    margin: 0 20px;
+}
+.service-row1 img{
+    display: block;
+    width: 100%;
+    height: 50%;
+    padding: ;
+}
+.service-row2 img{
+    display: block;
+    width: 100%;
+    height: 50%;
+}
+.service-row3 img{
+    display: block;
+    width: 100%;
+    height: 50%;
+}
+.service-row1 h2{
+    margin: 27px 0;
+    margin-left: 10px;
+}
+.service-row2 h2{
+    margin: 27px 0;
+    margin-left: 10px;
+}
+.service-row3 h2{
+    margin: 27px 0;
+    margin-left: 10px;
+}
+.service-row1 p{
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 2.3vmin;
+}
+.service-row2 p{
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 2.3vmin;
+}
+.service-row3 p{
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 2.3vmin;
+}
+
+/* Footer styles */
+footer {
+    background: rgb(226, 143, 143);
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+}
+
+.social-icon {
+    padding-bottom: 15px;
+}
+
+.social-icon a {
+    padding: 0 5px;
+}
+
+.copy {
+    width: 100%;
+    height: 45px;
+    padding: 5px 0;
+}
+
+.quick-links,
+.more {
+    display: inline-block;
+    text-align: left;
+    margin: 0 20px;
+}
+.foot-link{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.line{
+    width: 150px;
+    height: 4px;
+    background: blueviolet;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+/* Styles for the hamburger icon */
+.menu_botn {
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1000;
+    position: absolute;
+    top: 30px; 
+    right: 30px;
+    cursor: pointer;
+}
+
+.menu_botn div {
+    width: 100%;
+    height: 4px;
+    background-color: indigo;
+    margin: 5px 0;
+}
+
+
+
+
+
+
+
+
+
+
+/*mobile view*/
+@media only screen and (max-width:850px){
+    .header-line {
+        padding: 0;
+    }
+    .logo{
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+    .list{
+        flex-direction: column;
+        width: 50%;
+        height: 100vh;
+        justify-content: center;
+        background: lightblue;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        transition: right 0.3s; /* Smooth transition */
+        border-radius: 30px;
+    }
+    .menu_botn {
+        display: block;
+        position: fixed;
+    }
+    .list.active {
+        right: 0; /* Show the menu */
+        position: fixed;
+    }
+    
+    .list li{
+        margin: 30px auto;
+    }
+    .service-row{
+        flex-direction: column;        
+    }
+    .service-row1, .service-row2, .service-row3{
+        margin: 20px 0;
+        border: 0.5px solid red;
+    }
+    .service-row1 a, .service-row2 a, .service-row3 a{
+
+        font-size: large;
+        margin-bottom: 30px;
+    }
+    .service-row1 p, .service-row2 p, .service-row3 p{
+        padding: 20px;
+        font-size: large;
+        color: rgb(23, 29, 31);
+    }
+    .consultancy p {
+        padding: 10px 20px;
+        line-height: 2;
+        font-size: 17px;
+        color: rgb(3, 43, 56);
+    }
+    
+}

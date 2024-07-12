@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='aboutstyles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
@@ -12,12 +12,20 @@
 <body>
     <nav class="header-line">
         <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="peace-mind logo">
+        <!-- Hamburger icon for mobile view -->
+        <div class="menu_botn" id="menu_botn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Navigation links -->
         <ul class="list">
-            <li><a href="{{url_for('home')}}">home</a></li>
-            <li class="active"><a href="">about</a></li>
-            <li><a href="">service</a></li>
-            <li><a href="{{url_for('login')}}">login</a></li>
-            <li class="ctn"><a href="{{url_for('register')}}">register</a></li>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li class="active"><a href="{{url_for('about')}}">About Us</a></li>
+            <li><a href="{{url_for('service')}}">Service</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+            <li class="ctn"><a href="{{url_for('register')}}">Register</a></li>
         </ul>
     </nav>
     <section class="about-us">
@@ -57,20 +65,20 @@
         </div>
     </section>
     <section>
-        <div>
+        <div class="missionvission">
             <h2>Our Mission and Vission</h2>
             <div class="line"></div>
         </div>
         <div>
-            <div>
-                <img src="{{ url_for('static', filename='imglogo.png') }}" alt="">
+            <div class="missionvission2">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
                 <h2>Vission</h2>    
                 <p>
                     First choice hub for convenient mental health advocacy, therapy and consultation services in Africa.
                 </p>                
             </div>
-            <div>
-                <img src="{{ url_for('static', filename='imglogo.png') }}" alt="">
+            <div class="missionvission2">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
                 <h2>Mission</h2>    
                 <p>
                     we are committed to 
@@ -95,9 +103,29 @@
             <a href=""><i class="fa-brands fa-instagram"></i></a>
             <a href=""><i class="fa-brands fa-twitter"></i></a>
         </div>
+        <div class="foot-link">
+            <div class="foo">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('service') }}">Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>More</h2>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="copy">
             <p>&copy; 2024 peace-mind connection. all right reserved.</p>
         </div>
     </footer>
+     <!--JavaScript for toggling mobile menu -->
+     <script src="{{ url_for('static', filename='javascript/index.js') }}"></script>     
 </body>
 </html>

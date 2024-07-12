@@ -6,17 +6,13 @@
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-body {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: Arial, sans-serif;
-
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 ul {
@@ -27,6 +23,23 @@ a {
     text-decoration: none;
     color: white;
     font-size: large;
+}
+
+.about {
+    background-image: url('img/consultancy_img.jpeg');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 50vh;
+    align-items: end;/* Centers vertically */
+    justify-content: start;/* Centers horizontally */
+    display: flex;
+}
+.about h1{
+    text-align: center;
+    font-size: 5vmin;
+    padding: 50px;
+    color: blue;
 }
 
 .main {
@@ -80,18 +93,13 @@ a {
 .consultancy {
     width: 100%;
     height: 60vh;
-    margin-top: 150px;
+    margin-top: 50px;
     margin-bottom: 15px;
     text-align: left;
 }
 
-.consultancy h1 {
-    padding-bottom: 15px;
-    color: blue;
-}
-
 .consultancy p {
-    padding: 20px 30px;
+    padding: 10px 10px;
     line-height: 2;
     font-size: 20px;
     color: rgb(3, 43, 56);
@@ -147,6 +155,7 @@ a {
 
 .service-content p {
     margin-bottom: 10px;
+    
 }
 
 /* Footer styles */

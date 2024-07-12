@@ -8,8 +8,6 @@ from flask_bcrypt import Bcrypt
 import uuid
 
 
-
-
 """make app instance
 db: database instance
 app.config:connect the app to the database"""
@@ -121,15 +119,10 @@ def about():
 def service():
     return render_template('service.html')
 
+@app.route('/therapy')
+def therapy():
+    return render_template('therapy.html')
 
-@app.route('/dashboard', methods=['GET', 'POST'])
-@login_required
-def dashboard():
-    #if request.method == 'POST':
-     #   session.pop('user', None)
-
-      #  if request.form['password'] == 
-    return render_template('dashboard.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -142,9 +135,9 @@ def login():
             db.session.add(sess)
             db.session.commit()
             login_user(user)
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('home'))
         else:
-            flash('login unsuccessfull, pls check email or password')    
+            flash('login unsuccessfull, please check the email or password')    
     return render_template('login.html', form=form)
 
 @app.route('/logout', methods=['GET', 'POST'])
@@ -158,7 +151,7 @@ def register():
     form = Membershipform()
 
     if form.validate_on_submit():
-        flash('accout creare')
+        flash('Accout Created')
         """hashed_psw: this generate a hash for the real password
         db.session.add(new_user): adds the new_user info in the database table
         db.session.commit: this ensure is been added to the table
@@ -168,8 +161,10 @@ def register():
         new_user = User(username=form.username.data, password=hashed_psw)
         db.session.add(new_user)
         db.session.commit()
-        flash("you have been registered")
+        flash("you have successfully registered, please login")
         return redirect(url_for('login'))
+    else:
+        flash("registration unsuccessfull, please check the email or password")
 
     return render_template('register.html', form=form)
 

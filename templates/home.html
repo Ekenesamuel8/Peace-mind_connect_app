@@ -12,11 +12,20 @@
 <body>
     <nav class="header-line">
         <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="peace-mind logo">
+        <!-- Hamburger icon for mobile view -->
+        <div class="menu_botn" id="menu_botn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Navigation links -->
         <ul class="list">
             <li class="active"><a href="">home</a></li>
             <li><a href="{{ url_for('about') }}">about</a></li>
             <li><a href="{{ url_for('service') }}">service</a></li>
             <li><a href="{{url_for('login')}}">login</a></li>
+            <li><a href="{{ url_for('logout') }}">logout</a></li>
             <li class="ctn"><a href="{{url_for('register')}}">register</a></li>
         </ul>
     </nav>
@@ -66,7 +75,7 @@
                 <h2>Therapy</h2>
                 <p>Psychological evidence-based services to support you... 
                     Online therapy and personalized concierge services</p>
-                <a href="#" class="ctn">learn More</a>
+                <a href="{{ url_for('therapy') }}" class="ctn">learn More</a>
             </div>
             <div class="service-row2">
                 <img src="{{ url_for('static',filename='img/consultancy_img.jpeg') }}">
@@ -83,7 +92,6 @@
             </div>
         </div>
     </section>
-    
     <footer>
         <div class="follow-us">
             <h2>Follow Us</h2>
@@ -94,9 +102,29 @@
             <a href=""><i class="fa-brands fa-instagram"></i></a>
             <a href=""><i class="fa-brands fa-twitter"></i></a>
         </div>
+        <div class="foot-link">
+            <div class="foo">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('service') }}">Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>More</h2>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="copy">
             <p>&copy; 2024 peace-mind connection. all right reserved.</p>
         </div>
     </footer>
+    <!--JavaScript for toggling mobile menu -->
+    <script src="{{ url_for('static', filename='javascript/index.js') }}"></script>     
 </body>
 </html>

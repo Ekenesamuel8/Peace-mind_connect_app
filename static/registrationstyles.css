@@ -1,16 +1,7 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: indigo;
+    box-sizing: border-box;
 }
 
 body {
@@ -23,10 +14,32 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+ul {
+    list-style: none; /* Remove the dot in the list */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+
+/* Header styles */
 .header-line {
-    display: flex;   
+    display: flex;
     justify-content: space-between;
-    position: absolute;/*allign with the header image*/
+    position: absolute; /* Align with the header image */
     top: 0;
     left: 0;
     width: 100%;
@@ -39,62 +52,37 @@ body {
     margin-bottom: 10px;
 }
 
-.list{
-    display: flex;/*display content horizontally*/
-    align-items: center; 
+.list {
+    display: flex; /* Display content horizontally */
+    align-items: center;
     color: whitesmoke;
 }
 
-.list li{
-    margin: 0 25px;/*top n bottom 0, left nd right 15px*/
+.list li {
+    margin: 0 25px; /* Top and bottom 0, left and right 15px */
 }
 
+.list li a {
+    color: indigo;
+}
 
-.ctn{
+.ctn {
     background-color: red;
     margin-top: 30px;
     margin-bottom: 30px;
     padding: 5px 8px;
     border-radius: 40px;
-    color: white; 
-}
-
-.active{
-    color: red;
-    text-decoration: underline;
-    font-weight: bolder;
-}
-
-
-/* Flash message styling for success */
-.flash.success {
-    color: green; /* Change to a color that indicates success */
-    background-color: #d4edda; /* Light green background */
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #c3e6cb; /* Green border */
-    border-radius: 5px; /* Rounded corners */
-}
-
-/* Flash message styling for error */
-.flash.error {
-    color: red;
-    background-color: #f8d7da; /* Light red background */
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #f5c6cb; /* Red border */
-    border-radius: 5px; /* Rounded corners */
+    color: white;
 }
 
 .header {
-    background-image: url('img/login_background.jpeg');
+    background-image: url('img/register_background.jpeg');
     width: 100vw;
     height: 100vh;
-    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     text-align: center;
-    padding: 170px 100px;
+    padding: 200px 100px;
 }
 
 .header div h1 {
@@ -158,6 +146,30 @@ section .login-form {
     border-radius: 5px;
 }
 
+.msg a{
+    color: indigo;
+}
+
+/* Flash message styling for success */
+.flash.success {
+    color: green; /* Change to a color that indicates success */
+    background-color: #d4edda; /* Light green background */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb; /* Green border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Flash message styling for error */
+.flash.error {
+    color: red;
+    background-color: #f8d7da; /* Light red background */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb; /* Red border */
+    border-radius: 5px; /* Rounded corners */
+}
+
 /* Footer styles */
 footer {
     background: rgb(226, 143, 143);
@@ -186,13 +198,13 @@ footer {
     display: inline-block;
     text-align: left;
     margin: 0 20px;
-    padding-bottom: 30px;
 }
 .foot-link{
     display: flex;
     justify-content: space-around;
     margin-bottom: 30px;
 }
+
 /* Styles for the hamburger icon */
 .menu_botn {
     display: none;
@@ -212,6 +224,7 @@ footer {
     background-color: indigo;
     margin: 5px 0;
 }
+
 
 
 
@@ -251,3 +264,5 @@ footer {
     .list li{
         margin: 30px auto;
     }
+
+}
