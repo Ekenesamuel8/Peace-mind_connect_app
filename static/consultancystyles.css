@@ -24,6 +24,10 @@ a {
     color: white;
     font-size: large;
 }
+a:hover{
+    background-color: orange;
+    transition: .5s;
+}
 
 .about {
     background-image: url('img/consultancy_img.jpeg');
@@ -74,10 +78,6 @@ a {
 
 .list li {
     margin: 0 25px; /* Top and bottom 0, left and right 15px */
-}
-
-.list li a {
-    color: indigo;
 }
 
 .ctn {
@@ -176,7 +176,6 @@ footer {
 }
 
 .copy {
-    background-color: gray;
     width: 100%;
     height: 45px;
     padding: 5px 0;
@@ -202,8 +201,59 @@ footer {
     border-radius: 5px;
 }
 
+/* Styles for the hamburger icon */
+.menu_botn {
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1000;
+    position: absolute;
+    top: 30px; 
+    right: 30px;
+    cursor: pointer;
+}
+
+.menu_botn div {
+    width: 100%;
+    height: 4px;
+    background-color: indigo;
+    margin: 5px 0;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .header-line {
+        padding: 0;
+    }
+    .logo{
+        position: absolute;
+        width: 100px;
+    }
+    .list{
+        flex-direction: column;
+        width: 50%;
+        height: 100vh;
+        justify-content: center;
+        background: lightblue;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        transition: right 0.3s; /* Smooth transition */
+        border-radius: 30px;
+    }
+    .menu_botn {
+        display: block;
+        position: fixed;
+    }
+    .list.active {
+        right: 0; /* Show the menu */
+        position: fixed;
+    }
+    
+    .list li{
+        margin: 30px auto;
+    }
     .service {
         flex-direction: column;
     }
@@ -226,25 +276,37 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
     .service-img {
         width: 80px;
         height: 80px;
     }
 
-    .consultancy {
-        font-size: 1.5vmax;
+    .logo {
+        width: 60px;
     }
 
-    .consultancy h1 {
-        font-size: 2rem;
+    .consultancy {
+        font-size: 1.5vmax;
+        margin-top: 0px;
+        height: 70vh;
     }
 
     .consultancy p {
         font-size: 1rem;
+        line-height: 1.5;
     }
+
+    .service-row1{
+        flex-direction: column;
+    }
+
+    
 
     .see p {
         font-size: 1rem;
+    }
+    .foot-link{
+        margin-bottom: 30px;
     }
 }

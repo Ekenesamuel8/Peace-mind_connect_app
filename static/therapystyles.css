@@ -24,6 +24,11 @@ a {
     font-size: large;
 }
 
+a:hover{
+    background-color: orange;
+    transition: .5s;
+}
+
 
 /* Header styles */
 .header-line {

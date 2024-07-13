@@ -163,10 +163,10 @@ def register():
         db.session.commit()
         flash("you have successfully registered, please login")
         return redirect(url_for('login'))
-    else:
-        flash("registration unsuccessfull, please check the email or password")
-
+    
+    #flash("registration unsuccessfull, please check the email or password")
     return render_template('register.html', form=form)
+    
 
 
 

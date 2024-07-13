@@ -12,6 +12,14 @@
 <body>
     <nav class="header-line">
         <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="peace-mind logo">
+         <!-- Hamburger icon for mobile view -->
+         <div class="menu_botn" id="menu_botn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Navigation links -->
         <ul class="list">
             <li><a href="{{ url_for('home') }}">home</a></li>
             <li><a href="{{ url_for('about') }}">about</a></li>
@@ -22,7 +30,7 @@
     </nav>
     <section class="about-us">
         <div class="about">
-            <h1>Therapy</h1>
+            <h1>Consultancy</h1>
         </div>
     </section>
     <section class="main">
@@ -45,7 +53,7 @@
         <div class="service">
             <div class="service-row1">
                 <div class="service-img">
-                    <img src="{{ url_for('static',filename='img/therapy_img.jpeg') }}">
+                    <img src="{{ url_for('static',filename='img/executive.jpeg') }}">
                 </div>
                 <div class="service-content">
                     <h2>Executive Coaching</h2>
@@ -60,7 +68,7 @@
                     <a href="#" class="ctn">learn More</a>
                 </div>
                 <div class="service-img">
-                    <img src="{{ url_for('static',filename='img/consultancy_img.jpeg') }}">
+                    <img src="{{ url_for('static',filename='img/doctor.jpeg') }}">
                 </div>
             </div>
         </div>
@@ -97,5 +105,7 @@
             <p>&copy; 2024 peace-mind connection. all right reserved.</p>
         </div>
     </footer>
+    <!--JavaScript for toggling mobile menu -->
+    <script src="{{ url_for('static', filename='javascript/index.js') }}"></script>
 </body>
 </html>

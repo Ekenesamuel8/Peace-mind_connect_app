@@ -33,7 +33,7 @@ header {
     width: 100vw;
     height: 100vh;
     background-image: url('img/backgrd_img.jpeg');
-    background-position: top;/*Centers the background image */
+    background-position: center;/*Centers the background image */
     background-size: cover;
     display: flex;
     align-items: flex-end;
@@ -69,9 +69,6 @@ header {
     margin: 0 25px;/*top n bottom 0, left nd right 15px*/
 }
 
-.list li a{
-    color: indigo;
-}
 
 .ctn{
     background-color: red;
@@ -95,15 +92,15 @@ header {
 }
 
 .head-content h1{
-    color: purple;
+    color: rgb(243, 213, 213)
 }
 
 .head-content p{
-    color: rgb(58, 6, 49);
+    color: white
 }
 
 .head-content h2{
-    color: rgb(25, 10, 158);
+    color: rgb(172, 167, 219);
 }
 
 .head-content nav ul{
@@ -278,7 +275,7 @@ footer {
 
 
 
-/*mobile view*/
+/*tab view*/
 @media only screen and (max-width:850px){
     .header-line {
         padding: 0;
@@ -287,6 +284,60 @@ footer {
         position: absolute;
         top: 15px;
         left: 15px;
+    }
+    .list{
+        flex-direction: column;
+        width: 50%;
+        height: 100vh;
+        justify-content: center;
+        background: lightblue;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        transition: right 0.3s; /* Smooth transition */
+        border-radius: 30px;
+    }
+    .menu_botn {
+        display: block;
+        position: fixed;
+    }
+    .list.active {
+        right: 0; /* Show the menu */
+        position: fixed;
+    }
+    
+    .list li{
+        margin: 30px auto;
+    }
+    .service-row{
+        flex-direction: column;        
+    }
+    .service-row1, .service-row2, .service-row3{
+        margin: 20px 0;
+        border: 0.5px solid red;
+    }
+    .service-row1 a, .service-row2 a, .service-row3 a{
+
+        font-size: large;
+        margin-bottom: 30px;
+    }
+    .service-row1 p, .service-row2 p, .service-row3 p{
+        padding: 20px;
+        font-size: large;
+        color: rgb(23, 29, 31);
+    }
+}
+
+
+/*mobile view*/
+@media only screen and (max-width:359px){
+    .header-line {
+        padding: 0;
+    }
+    .logo{
+        position: absolute;
+        top: 8px;
+        left: 8px;
     }
     .list{
         flex-direction: column;
