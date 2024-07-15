@@ -284,6 +284,7 @@ footer {
         position: absolute;
         top: 15px;
         left: 15px;
+        width: 80px;
     }
     .list{
         flex-direction: column;
@@ -291,11 +292,11 @@ footer {
         height: 100vh;
         justify-content: center;
         background: lightblue;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: -100%;
         transition: right 0.3s; /* Smooth transition */
-        border-radius: 30px;
+        border-radius: 20px;
     }
     .menu_botn {
         display: block;
@@ -330,14 +331,12 @@ footer {
 
 
 /*mobile view*/
-@media only screen and (max-width:359px){
+@media only screen and (max-width:310px){
     .header-line {
         padding: 0;
     }
     .logo{
-        position: absolute;
-        top: 8px;
-        left: 8px;
+        width: 50px;
     }
     .list{
         flex-direction: column;
@@ -345,15 +344,16 @@ footer {
         height: 100vh;
         justify-content: center;
         background: lightblue;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: -100%;
         transition: right 0.3s; /* Smooth transition */
-        border-radius: 30px;
+        border-radius: 20px;
     }
     .menu_botn {
         display: block;
         position: fixed;
+        width: 20px;
     }
     .list.active {
         right: 0; /* Show the menu */
@@ -361,7 +361,7 @@ footer {
     }
     
     .list li{
-        margin: 30px auto;
+        margin: 20px auto;
     }
     .service-row{
         flex-direction: column;        
@@ -380,4 +380,19 @@ footer {
         font-size: large;
         color: rgb(23, 29, 31);
     }
+    .logo2{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding-top: 40px;
+        
+    }
+    .logo2 img{
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .mission{
+        text-align: center;
+        padding-top: 15px;
 }

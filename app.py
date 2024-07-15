@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, url_for, redirect, flash, request, session, g
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
@@ -6,6 +7,10 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import input_required, length, ValidationError # data_required
 from flask_bcrypt import Bcrypt
 import uuid
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 """make app instance
@@ -15,8 +20,8 @@ app.config:connect the app to the database"""
 app = Flask(__name__)
 bcrypt = Bcrypt(app)# to ensure the paasword that is stored in or database is hashed 
 # Configure the SQLite database URL and secret key
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:1258@localhost/ekenetest'
-app.config['SECRET_KEY'] = 'ascretekey'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 # Initialize SQLAlchemy for database operations
 db = SQLAlchemy(app)
 

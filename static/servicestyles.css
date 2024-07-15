@@ -229,6 +229,7 @@ footer {
         position: absolute;
         top: 15px;
         left: 15px;
+        width: 100px;
     }
     .list{
         flex-direction: column;
@@ -236,7 +237,7 @@ footer {
         height: 100vh;
         justify-content: center;
         background: lightblue;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: -100%;
         transition: right 0.3s; /* Smooth transition */
