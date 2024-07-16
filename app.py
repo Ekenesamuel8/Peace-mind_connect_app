@@ -112,11 +112,11 @@ def home():
     return render_template('home.html')
 
 @app.route('/consultancy')
+@login_required
 def consultancy():
     return render_template('consultancy.html')
 
 @app.route('/about')
-@login_required
 def about(): 
     return render_template('about.html')
 
@@ -125,6 +125,7 @@ def service():
     return render_template('service.html')
 
 @app.route('/therapy')
+@login_required
 def therapy():
     return render_template('therapy.html')
 

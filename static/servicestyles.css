@@ -93,6 +93,7 @@ body {
     text-align: center;
     font-size: 5vmin;
     padding: 50px;
+    color: white;
     }
 
     
@@ -229,7 +230,7 @@ footer {
         position: absolute;
         top: 15px;
         left: 15px;
-        width: 100px;
+        width: 70px;
     }
     .list{
         flex-direction: column;
@@ -271,5 +272,10 @@ footer {
         padding: 20px;
         font-size: large;
         color: rgb(23, 29, 31);
+    }
+    .statement-msg p{
+        font-size: 14px;
+        color: black;
+        padding: 10px;
     }
 }
